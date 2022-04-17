@@ -1,0 +1,11 @@
+- name: Testing
+  hosts: all
+  remote_user: root
+  gather_facts: false
+
+  tasks:
+    - name: Create file
+      ansible.builtin.file:
+       path: /etc/some_directory
+       state: directory
+       mode: '0755'

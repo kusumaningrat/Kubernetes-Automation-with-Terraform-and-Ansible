@@ -5,6 +5,10 @@
   gather_facts: false
 
   tasks:
+  - name: Update system
+    apt:
+     update_cache: yes
+
   - name: Install packages that allow apt to be used over HTTPS
     apt:
       name: "{{ packages }}"
@@ -38,8 +42,6 @@
       - docker-ce 
       - docker-ce-cli 
       - containerd.io
-    notify:
-      - docker status
 
   - name: Add ubuntu user to docker group
     user:
@@ -58,6 +60,10 @@
     become: yes
     lineinfile:
       path: /etc/docker/daemon.json
-      line: { 
-        "exec-opts": ["native.cgroupdriver=systemd"] 
-      }
+      line: '{ "exec-opts": ["native.cgroupdriver=systemd"] }'
+
+  - name: Enable and Restart Docker Service
+    service:
+      name: docker
+      state: restarted
+

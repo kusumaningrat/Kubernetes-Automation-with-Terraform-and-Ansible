@@ -41,6 +41,11 @@
         name: kubelet
         selection: hold
 
+    - name: Ensure br_netfilter is enabled.
+      modprobe:
+        name: br_netfilter
+        state: present
+
     - name: Add line Net Bridge on sysctl.conf
       become: yes
       lineinfile:

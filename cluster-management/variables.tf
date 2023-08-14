@@ -1,6 +1,6 @@
 variable "ssh_key" {
   type        = string
-  default     = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJuS4tf9FUDqhnpn/rPM+NtUVW6YypDj7nLF3qshSiw5KThMbH5Wcx+PrSx0lD92MkZTozTiz0zCEJfyIqUCQxuoabbIsT+D/+EZMsAxQUyHj1ZFhhuymX4s2fgR9CjJ8F3UsiODlC/Nn8lui40jQBjF1TG083hAC0+bFr63ZRawsVseP94ZbFhii9fswG8OvR1OfZ2zo7JLG4jfdDJx8y/H8AjJMX2+0FWOkC4bN5ZTbxN5w6ZWstxsyvL7RB8sUvTwR9IdZKAwbGsvo2ydwhq+Nmw2sYYH8aYafDlMKy6It9dQ/WUuF9QrR5sYCShe2uYiy15SUvo7EWQiAQqnmr kusumaningrat@core-server"
+  default     = "<your_ssh_key>"
   description = "SSH Key"
 }
 
@@ -18,12 +18,12 @@ variable "template_name" {
 
 variable "hostname" {
     type = string
-    default = "ubg.local"
+    default = "<your_hostname>"
     description = "Server Hostname"
 }
 
 variable "password" {
     type = string
-    default = "12345678"
+    default = "<your_password>"
     description = "Server Password"
 }
